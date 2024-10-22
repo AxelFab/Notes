@@ -1,0 +1,36 @@
+name: Deploy Angular Project to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Cambiado a 'master' ya que es tu rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Asegúrate de que la versión sea compatible con tu proyecto
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the Angular project
+        run: npm run build -- --output-path=dist/browser --base-href="/Notes/"
+
+      - name: Move files to root
+        run: |
+          mv dist/browser/* dist/  # Mueve los archivos generados a la raíz de dist
+          rmdir dist/browser || true  # Elimina la carpeta dist/browser si existe
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

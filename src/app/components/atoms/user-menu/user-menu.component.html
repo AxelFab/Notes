@@ -1,0 +1,18 @@
+<div class="user-section">
+  <div class="image online" [style.background-image]="'url(./assets/img/avatar.jpeg)'"></div>
+  <div class="options">
+    <div class="content-options">
+      <div class="user-name">
+        <p>{{userName}}</p>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </div>
+      <ul class="user-options">
+        <li *ngFor="let state of status" class="{{state.type}}" > <mat-icon>fiber_manual_record</mat-icon>{{state.desc}}</li>
+        <hr>
+        <li> <mat-icon>settings</mat-icon> Configuración.</li>
+        <li> <mat-icon>logout</mat-icon> Cerrar Sesión.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>

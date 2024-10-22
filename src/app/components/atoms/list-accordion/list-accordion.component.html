@@ -1,0 +1,15 @@
+<div class="acordion pointer" *ngFor="let grupo of grupos let i = index" (click)="toggleAccordion(i)" [id]="i">
+  <div class="options">
+    <mat-icon class="pointer" *ngIf="activeIndex !== i">keyboard_arrow_right</mat-icon>
+    <mat-icon class="pointer" *ngIf="activeIndex === i">keyboard_arrow_down</mat-icon>
+    <mat-icon>toc</mat-icon>
+    <p>{{grupo.grupo}}</p>
+    <app-indicador-circle [number]="grupo.lista.length" bgColor="#ccc"></app-indicador-circle>
+  </div>
+  <ul [ngClass]="activeIndex === i ? 'list expand' : 'list collapse'">
+
+    <li class="item" *ngFor="let item of grupo.lista" (click)="showTask($event)"><mat-icon>description</mat-icon>
+      <p>{{item.item}}</p>
+    </li>
+  </ul>
+</div>

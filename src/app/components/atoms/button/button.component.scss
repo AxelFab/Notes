@@ -1,0 +1,25 @@
+p{
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border:none;
+  padding: 5px;
+  width: fit-content;
+  background: #e1e1e1;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn:hover{
+  filter: contrast(0.9);
+}
+.btn:active{
+  filter: contrast(1.5);
+}

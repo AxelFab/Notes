@@ -1,0 +1,20 @@
+<div class="left-menu">
+  <app-button id="menu-movil" text="" icon="menu" background="transparent"
+    textColor="#1abc9c" class="menu-movil" (click)="closeMenu($event)"></app-button>
+
+  <div class="header-menu">
+    <app-user-menu userName="Fabian Chapero"></app-user-menu>
+  </div>
+
+  <div class="content-menu">
+
+
+    <div style="padding: 10px;">
+      <app-button id="addGrupo" text="Agregar grupo" icon="add_circle" background="transparent"
+        textColor="#1abc9c"></app-button>
+    </div>
+    <app-list-accordion></app-list-accordion>
+
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="content">
+
+  <div class="header">
+
+    <app-input-search width="50%"></app-input-search>
+
+  </div>
+
+  <div class="contenido">
+
+
+    <div class="content-notes">
+      <div class="orders">
+        <app-button icon="grid_view" text="" textColor="#1abc9c" background="transparent"></app-button>
+        <app-button icon="view_list" text="" textColor="#1abc9c" background="transparent"></app-button>
+        <app-button icon="sort_by_alpha" text="" textColor="#1abc9c" background="transparent"></app-button>
+      </div>
+      <div class="notes">
+
+        <div *ngFor="let note of notes" class="note grid">
+          <div class="title">
+            <h6>{{note.title}}</h6>
+          </div>
+          <div class="content-note">
+            {{note.text}}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
